@@ -1,5 +1,4 @@
 import re
-from datetime import datetime
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -8,10 +7,13 @@ from tagging.fields import TagField
 from tendenci.core.perms.models import TendenciBaseModel
 from speakers.managers import SpeakerManager
 from tendenci.core.files.models import File
+from tendenci.core.files.managers import FileManager
+
 
 def file_directory(instance, filename):
     filename = re.sub(r'[^a-zA-Z0-9._]+', '-', filename)
     return 'speakers/%s' % (filename)
+
 
 class Speaker(TendenciBaseModel):
     name = models.CharField(max_length=50)
@@ -84,6 +86,8 @@ class SpeakerFile(File):
             ('other','Other'),
         ))
     position = models.IntegerField(blank=True)
+
+    objects = FileManager()
 
     def save(self, *args, **kwargs):
         if self.position is None:
