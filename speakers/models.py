@@ -64,13 +64,13 @@ class Speaker(TendenciBaseModel):
         
     def professional_photo(self):
         try:
-            return self.speakerfile_set.filter(photo_type='Professional')[0]
+            return self.speakerfile_set.filter(photo_type__iexact='professional')[0]
         except:
             return False
     
     def fun_photo(self):
         try:
-            return self.speakerfile_set.filter(photo_type='Fun')[0]
+            return self.speakerfile_set.filter(photo_type__iexact='fun')[0]
         except:
             return False
 
@@ -80,10 +80,8 @@ class SpeakerFile(File):
     photo_type = models.CharField(
         max_length=50,
         choices=(
-            ('polaroid','Polaroid'),
             ('professional','Professional'),
             ('fun','Fun'),
-            ('other','Other'),
         ))
     position = models.IntegerField(blank=True)
 
