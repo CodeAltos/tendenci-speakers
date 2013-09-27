@@ -25,7 +25,13 @@
     {% endif %}
     <div class="speaker-search-wrap">
         {% for speaker_member in speakers %}
-            {% search_result speaker_member %}
+            {% if SITE_GLOBAL_SEARCHINDEX and request.GET.q %}
+                {% with speaker_member=speaker_member.object %}
+                    {% search_result speaker_member %}
+                {% endwith %}
+            {% else %}
+                {% search_result speaker_member %}
+            {% endif %}
         {% empty %}
             <p>0 {% trans "Speakers Found" %}</p>
         {% endfor %}
