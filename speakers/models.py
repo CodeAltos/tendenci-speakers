@@ -14,19 +14,18 @@ def file_directory(instance, filename):
     filename = re.sub(r'[^a-zA-Z0-9._]+', '-', filename)
     return 'speakers/%s' % (filename)
 
+class Track(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __unicode__(self):
+        return self.name
 
 class Speaker(TendenciBaseModel):
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=75)
     company = models.CharField(blank=True, max_length=150)
     position = models.CharField(blank=True, max_length=150)
-    track = models.CharField(
-        max_length=50,
-        choices=(
-            ('create','Create'),
-            ('profit','Profit'),
-            ('reach','Reach'),
-        ))
+    track = models.ForeignKey(Track, null=True)
     biography = models.TextField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     ordering = models.IntegerField(_('order'), max_length=3)
