@@ -59,6 +59,10 @@ class SpeakerAdmin(TendenciBaseModelAdmin):
     form = SpeakerForm
     inlines = (FileAdmin,)
 
+    def __init__(self, *args, **kwargs):
+        super(SpeakerAdmin, self).__init__(*args, **kwargs)
+        self.list_editable = ['name', 'ordering']
+
     class Media:
         js = (
             '%sjs/jquery-1.4.2.min.js' % settings.STATIC_URL,
