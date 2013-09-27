@@ -3,8 +3,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.conf import settings
 
 from tendenci.core.perms.admin import TendenciBaseModelAdmin
-from speakers.models import Speaker, SpeakerFile
-from speakers.forms import SpeakerForm, FileForm
+from addons.speakers.models import Speaker, SpeakerFile, Track
+from addons.speakers.forms import SpeakerForm, FileForm
 
 
 class FileAdmin(admin.StackedInline):
@@ -83,4 +83,8 @@ class SpeakerAdmin(TendenciBaseModelAdmin):
 
         formset.save()
 
+class TrackAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
 admin.site.register(Speaker, SpeakerAdmin)
+admin.site.register(Track, TrackAdmin)
