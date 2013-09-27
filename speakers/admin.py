@@ -53,6 +53,7 @@ class SpeakerAdmin(TendenciBaseModelAdmin):
             'group_perms',
         )}),
         ('Publishing Status', {'fields': (
+            'status',
             'status_detail',
         )}),
     )
