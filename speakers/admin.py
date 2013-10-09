@@ -26,7 +26,7 @@ class SpeakerAdmin(TendenciBaseModelAdmin):
     list_display = ['name', 'track', 'company', 'position', 'ordering']
     list_filter = ['company', 'track']
     search_fields = ['name', 'biography']
-    ordering = ('-ordering',)
+    ordering = ('ordering',)
     prepopulated_fields = {'slug': ['name']}
     fieldsets = (
         (None, {'fields': (
