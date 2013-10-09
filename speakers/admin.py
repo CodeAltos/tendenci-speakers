@@ -23,7 +23,7 @@ class FileAdmin(admin.StackedInline):
 
 
 class SpeakerAdmin(TendenciBaseModelAdmin):
-    list_display = ['ordering', 'name', 'track', 'company', 'position']
+    list_display = ['name', 'track', 'company', 'position', 'ordering']
     list_filter = ['company', 'track']
     search_fields = ['name', 'biography']
     ordering = ('-ordering',)
@@ -68,7 +68,7 @@ class SpeakerAdmin(TendenciBaseModelAdmin):
         js = (
             '%sjs/jquery-1.4.2.min.js' % settings.STATIC_URL,
             '%sjs/jquery_ui_all_custom/jquery-ui-1.8.5.custom.min.js' % settings.STATIC_URL,
-            #'%sjs/admin/speaker-dynamic-sort.js' % settings.STATIC_URL,
+            '%sjs/admin/admin-list-reorder-ordering.js' % settings.STATIC_URL,
             '%sjs/global/tinymce.event_handlers.js' % settings.STATIC_URL,
         )
         css = {'all': ['%scss/admin/dynamic-inlines-with-sort.css' % settings.STATIC_URL], }
