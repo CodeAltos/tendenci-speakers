@@ -27,7 +27,7 @@
                     {% endspaceless %}
                 </p>
                 {% if speaker_member.biography %}
-                <p>{{ speaker_member.biography|striptags|truncatewords:"80" }}</p>
+                <p>{{ speaker_member.biography|striptags|truncatewords:"80"|safe }}</p>
                 {% endif %}
             </td>
         </tr>
