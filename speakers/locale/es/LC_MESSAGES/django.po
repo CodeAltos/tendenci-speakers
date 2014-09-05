@@ -23,11 +23,11 @@ msgstr ""
 
 #: models.py:42
 msgid "Personal Sites"
-msgstr ""
+msgstr "Sitios Personal"
 
 #: models.py:47
 msgid "Tags separated by commas. E.g Tag1, Tag2, Tag3"
-msgstr ""
+msgstr "Etiquetas separados por comas. Por ejemplo, tag1, tag2, tag3"
 
 #: templates/speakers/search.html:36
 msgid "Speakers Found"
