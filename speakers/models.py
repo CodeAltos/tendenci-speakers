@@ -4,10 +4,10 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from tagging.fields import TagField
-from tendenci.core.perms.models import TendenciBaseModel
+from tendenci.apps.perms.models import TendenciBaseModel
 from speakers.managers import SpeakerManager
-from tendenci.core.files.models import File
-from tendenci.core.files.managers import FileManager
+from tendenci.apps.files.models import File
+from tendenci.apps.files.managers import FileManager
 
 
 def file_directory(instance, filename):

@@ -9,7 +9,7 @@
             <td class="member-photo">
                 {% if speaker_member.professional_photo %}
                 <a href="{{ speaker_member.get_absolute_url }}">
-                <img src="{% url file speaker_member.professional_photo.pk %}128x128/" title="{{ speaker_member.name }}"  />
+                <img src="{% url "file" speaker_member.professional_photo.pk %}128x128/" title="{{ speaker_member.name }}"  />
                 </a>
                 {% endif %}
                 <p><a href="{{ speaker_member.get_absolute_url }}">{{ speaker_member.name }}</a></p>

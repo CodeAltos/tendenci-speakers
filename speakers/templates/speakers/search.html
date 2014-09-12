@@ -10,7 +10,7 @@
 {% block extra_head %}
 {{ block.super }}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/speaker.css" />
-<link rel="alternate" type="application/rss+xml" title="Latest Speaker" href="{% url speaker.feed %}" />
+<link rel="alternate" type="application/rss+xml" title="Latest Speaker" href="{% url "speaker.feed" %}" />
 {% endblock %}
 
 {% block body %}
@@ -21,7 +21,7 @@
 
     {% speaker_search %}
     {% if can_add_speaker %}
-    <div><a href="{% url admin:speakers_speaker_add %}">Add Speaker</a></div>
+    <div><a href="{% url "admin:speakers_speaker_add" %}">Add Speaker</a></div>
     {% endif %}
     <div class="speaker-search-wrap">
         {% for speaker_member in speakers %}

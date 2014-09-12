@@ -6,11 +6,11 @@ from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.core.urlresolvers import reverse
 from django.core.files.images import ImageFile
 
-from tendenci.core.base.http import Http403
-from tendenci.core.site_settings.utils import get_setting
-from tendenci.core.event_logs.models import EventLog
-from tendenci.core.files.utils import get_image
-from tendenci.core.perms.utils import has_perm, has_view_perm, get_query_filters
+from tendenci.apps.base.http import Http403
+from tendenci.apps.site_settings.utils import get_setting
+from tendenci.apps.event_logs.models import EventLog
+from tendenci.apps.files.utils import get_image
+from tendenci.apps.perms.utils import has_perm, has_view_perm, get_query_filters
 from speakers.models import Speaker
 
 

@@ -1,7 +1,7 @@
 from haystack import indexes
-from haystack import site
 
-from tendenci.core.perms.indexes import TendenciBaseSearchIndex
+
+from tendenci.apps.perms.indexes import TendenciBaseSearchIndex
 
 from speakers.models import Speaker
 
@@ -12,4 +12,5 @@ class SpeakerIndex(TendenciBaseSearchIndex):
     track = indexes.CharField(model_attr='track', null=True)
     ordering = indexes.IntegerField(model_attr='ordering', null=True)
 
-site.register(Speaker, SpeakerIndex)
+    def get_model(self):
+        return Speaker

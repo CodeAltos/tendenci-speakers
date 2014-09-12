@@ -3,7 +3,7 @@ from os.path import splitext
 
 from django import forms
 
-from tendenci.core.perms.forms import TendenciBaseForm
+from tendenci.apps.perms.forms import TendenciBaseForm
 from speakers.models import Speaker, SpeakerFile
 from tinymce.widgets import TinyMCE
 
