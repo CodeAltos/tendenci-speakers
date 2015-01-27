@@ -5,6 +5,14 @@ from speakers.models import Speaker
 
 register = Library()
 
+@register.inclusion_tag("speakers/top_nav_items.html", takes_context=True)
+def speaker_current_app(context, user, speaker=None):
+    context.update({
+        "app_object": speaker,
+        "user": user
+    })
+    return context
+
 
 @register.inclusion_tag("speakers/options.html", takes_context=True)
 def speaker_options(context, user, speaker):
@@ -34,10 +42,10 @@ def list_speakers(parser, token):
 
         {% list_speakers as [varname] [options] %}
 
-    Be sure the [varname] has a specific name like ``speakers_sidebar`` or 
+    Be sure the [varname] has a specific name like ``speakers_sidebar`` or
     ``speakers_list``. Options can be used as [option]=[value]. Wrap text values
     in quotes like ``tags="cool"``. Options include:
-    
+
         ``limit``
            The number of items that are shown. **Default: 3**
         ``order``

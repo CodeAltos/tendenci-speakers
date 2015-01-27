@@ -4,6 +4,7 @@
 {% load perm_tags %}
 {% load speaker_tags %}
 {% load tagging_tags %}
+{% load i18n %}
 
 {% block title %}
     {% nowhitespace %}
@@ -58,7 +59,7 @@
         </div>
         <div class="member-photo">
             {% if speaker_member.professional_photo %}
-            <img src="{% url "file" speaker_member.professional_photo.pk %}128x128/" title="{{ speaker_member.name }}"  />
+            <img src="{% url 'file' speaker_member.professional_photo.pk %}128x128/" title="{{ speaker_member.name }}"  />
             {% endif %}
             <p>{{ speaker.name }}</p>
             {%  if speaker.position %}
@@ -80,7 +81,7 @@
         </p>
         {% endif %}
         <div class="speaker-meta">
-            <a href="{% url "speaker.search" %}">&laquo;&nbsp;Search other speakers</a>
+            <a href="{% url 'speaker.search' %}">&laquo;&nbsp;{% trans 'Search other speakers' %}</a>
         </div>
     </div>
 </div>
