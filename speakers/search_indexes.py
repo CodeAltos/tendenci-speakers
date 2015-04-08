@@ -12,5 +12,6 @@ class SpeakerIndex(TendenciBaseSearchIndex):
     track = indexes.CharField(model_attr='track', null=True)
     ordering = indexes.IntegerField(model_attr='ordering', null=True)
 
+    @classmethod
     def get_model(self):
         return Speaker
