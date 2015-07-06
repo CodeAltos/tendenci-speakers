@@ -9,7 +9,7 @@ setup(
     name='tendenci-speakers',
     author='Schipul',
     author_email='programmers@schipul.com',
-    version='6.0.2',
+    version='6.0.3',
     license='GPL3',
     description='Speakers addon for Tendenci',
     long_description=longdesc,
