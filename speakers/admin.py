@@ -44,7 +44,8 @@ class SpeakerAdmin(TendenciBaseModelAdmin):
         ('Social Media', {
         'description': ('Enter just your usernames for any of these social media sites. No need to enter the full links.'),
         'fields': (
-             ('facebook', 'twitter', 'linkedin', 'get_satisfaction', 'flickr', 'slideshare'),
+             ('facebook',), ('twitter',), ('linkedin',), ('get_satisfaction'),
+             ('flickr',), ('slideshare',),
         )}),
         ('Permissions', {'fields': ('allow_anonymous_view',)}),
         ('Advanced Permissions', {'classes': ('collapse',), 'fields': (
