@@ -19,14 +19,14 @@ class SpeakerForm(TendenciBaseForm):
     biography = forms.CharField(required=False,
         widget=TinyMCE(attrs={'style':'width:100%'},
         mce_attrs={'storme_app_label':Speaker._meta.app_label,
-        'storme_model':Speaker._meta.module_name.lower()}))
+        'storme_model':Speaker._meta.model_name.lower()}))
 
     cv = forms.CharField(
         label='CV',
         required=False,
         widget=TinyMCE(attrs={'style':'width:100%'},
             mce_attrs={'storme_app_label':Speaker._meta.app_label,
-            'storme_model':Speaker._meta.module_name.lower()}))
+            'storme_model':Speaker._meta.model_name.lower()}))
     
     status_detail = forms.ChoiceField(choices=(('active','Active'),('inactive','Inactive')))
 
