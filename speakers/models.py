@@ -17,6 +17,9 @@ def file_directory(instance, filename):
 class Track(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
+    class Meta:
+        app_label = 'speakers'
+
     def __unicode__(self):
         return self.name
 
@@ -56,6 +59,7 @@ class Speaker(TendenciBaseModel):
         verbose_name = 'speaker'
         verbose_name_plural = 'speaker'
         get_latest_by = "-start_date"
+        app_label = 'speakers'
 
     @models.permalink
     def get_absolute_url(self):
@@ -100,3 +104,4 @@ class SpeakerFile(File):
 
     class Meta:
         ordering = ('position',)
+        app_label = 'speakers'
