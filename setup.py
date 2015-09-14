@@ -27,5 +27,5 @@ setup(
     ],
     include_package_data=True,
     packages=find_packages(),
-    install_requires=['tendenci>=7.0.0,<8.0'],
+    #install_requires=['tendenci>=7.0.0,<8.0'],
 )
